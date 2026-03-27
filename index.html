@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página con Estilo</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Tu color café personalizado */
+        .bg-brown {
+            background-color: #5D4037 !important;
+        }
+        
+        /* Ajustes de legibilidad para tu Navbar */
+        .navbar-dark .nav-link {
+            color: rgba(255,255,255,0.8) !important;
+        }
+        .navbar-dark .nav-link.active {
+            color: #fff !important;
+        }
+
+        /* --- NUEVOS ESTILOS PARA QUE SE VEA BONITO --- */
+        
+        /* Sección de Bienvenida (Hero) */
+        .hero-header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgu0G5RC9hSuTkGlOT20Y-tYK70A63ZWMIPN2ZQ4RSSB89JOWmzHZ_dDzJaJ8Fmtuz6p6G_mpo5NRYTT2x6MEiLWgu0U1fHJrM6lvIqBUx4corPWAhRVYc2D7cpgJEFgDwtGG9iELEN86sGDOcrYqVbBqbtD_wr1q8r_RRDnTW3hqiN1HWvebqkpMxF/w1200-h630-p-k-no-nu/Atardecer%20en%20Taganana%201.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        /* Estilo para las tarjetas de imágenes */
+        .card-custom {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .card-custom:hover {
+            transform: scale(1.03);
+        }
+        .card-custom img {
+            border-radius: 15px 15px 0 0;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-brown">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./contactanos.html">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./inform.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./canales.html">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-header">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Bienvenidos a mi espacio digital</h1>
+            <p class="lead">Explora contenido increíble con un diseño elegante y sencillo.</p>
+        </div>
+    </header>
+
+    <div class="container my-5">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card card-custom">
+                    <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2072&auto=format&fit=crop" class="card-img-top" alt="Trabajo">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Tecnología</h5>
+                        <p class="card-text">Descubre las herramientas digitales que están cambiando el mundo hoy mismo.</p>
+                        <a href="#" class="btn btn-brown text-white" style="background-color: #5D4037;">Leer más</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card card-custom">
+                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2070&auto=format&fit=crop" class="card-img-top" alt="Blog">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Nuestro Blog</h5>
+                        <p class="card-text">Artículos semanales sobre diseño, programación y tendencias de estilo de vida.</p>
+                        <a href="#" class="btn btn-brown text-white" style="background-color: #5D4037;">Visitar blog</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card card-custom">
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop" class="card-img-top" alt="Contacto">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Servicios</h5>
+                        <p class="card-text">Ofrecemos soluciones personalizadas para cada uno de nuestros clientes.</p>
+                        <a href="#" class="btn btn-brown text-white" style="background-color: #5D4037;">Ver servicios</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-brown text-white text-center py-4">
+        <div class="container">
+            <small>© 2026 Mi Web - Todos los derechos reservados</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

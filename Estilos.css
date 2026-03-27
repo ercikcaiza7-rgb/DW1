@@ -1,0 +1,28 @@
+/*color de fondo de la pagina*/
+body{
+background-color: rgb(132, 0, 255);
+}
+/*color y diseño a los botones */
+button{
+background-color: #18F20C;border: 1.5px;border-color:aliceblue;border-radius: 20px;color:azure;
+}
+/*para cambiar el color de otro bonton */
+.btnSucess{
+    background-color: rgb(7, 53, 41);
+}
+/* animacion de cambio de color y color de la letra cuando pasa el mouse por encima*/
+button:hover{background-color: brown;
+color:blanchedalmond;
+}
+
+p{
+    text-align: center;
+    
+    padding: 10px;
+    font-size:50px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+img{
+     display: block; margin: 0 auto;
+}
