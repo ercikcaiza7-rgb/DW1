@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Animado</title>
+    <style>
+        /* ANIMACIÓN DE FONDO */
+        @keyframes fondoAnimado {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start; 
+            min-height: 100vh;
+            margin: 0;
+            padding-top: 50px;
+            font-family: 'Segoe UI', sans-serif;
+            
+            /* Configuración del fondo animado */
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: fondoAnimado 15s ease infinite;
+        }
+        
+        .contenedor-formulario {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+            width: 350px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 0;
+            letter-spacing: 2px;
+        }
+
+        .campo {
+            margin-bottom: 20px; 
+        }
+
+        label {
+            display: block; 
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, select {
+            padding: 12px;
+            width: 100%; 
+            border: 2px solid #eee;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        input:focus {
+            border-color: #23a6d5;
+            outline: none;
+        }
+
+        .btnSucess {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .btnSucess:hover {
+            transform: scale(1.02);
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-formulario">
+        <h1>FORMULARIO</h1>
+
+        <form id="miFormulario"> 
+            <div class="campo">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" 
+                       placeholder="Solo escriba su nombre" 
+                       oninput="validarTexto(this)" required>
+            </div>
+
+            <div class="campo">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" 
+                       placeholder="Solo escriba su apellido" 
+                       oninput="validarTexto(this)" required>
+            </div>
+
+            <div class="campo">
+                <label for="celular">Número celular:</label>
+                <input type="text" id="celular" name="celular" 
+                       maxlength="10"
+                       placeholder="Solo 10 números" 
+                       oninput="validarNumero(this)" required>
+            </div>
+
+            <div class="campo">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" 
+                       placeholder="ejemplo@correo.com" required>
+            </div>
+
+            <div class="campo">
+                <label for="genero">Género:</label>
+                <select id="genero" name="genero">
+                    <option value="femenino">Femenino</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+          
+            <div class="campo">
+                <h3>Fecha de nacimiento</h3>
+                <input type="date" id="fecha" name="fecha" required>
+            </div>
+
+            <button type="submit" class="btnSucess">
+                Enviar Registro
+            </button>
+        </form>
+    </div>
+
+    <script>
+        function validarTexto(input) {
+            if (/[^a-zA-ZáéíóúÁÉÍÓÚñÑ ]/.test(input.value)) {
+                alert("Solo se permite texto");
+                input.value = input.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ ]/g, ""); 
+            }
+        }
+
+        function validarNumero(input) {
+            if (/[^0-9]/.test(input.value)) {
+                alert("Solo se permiten números");
+                input.value = input.value.replace(/[^0-9]/g, "");
+            }
+        }
+
+        document.getElementById('miFormulario').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const celular = document.getElementById('celular').value;
+            if (celular.length < 10) {
+                alert("El celular debe tener exactamente 10 dígitos");
+            } else {
+                alert('Su formulario fue correcto');
+            }
+        });
+    </script>
+    
+</body>
+</html>
